@@ -28,8 +28,8 @@ typedef struct WindThread {
 typedef struct WindModule {
 	char *name;
 	ut64 addr;
-	ut64 size;
-	ut64 timestamp;
+	ut32 size;
+	ut32 timestamp;
 } WindModule;
 
 enum {
@@ -156,4 +156,5 @@ int winkd_break_read(KdCtx *ctx);
 bool winkd_lock_enter(KdCtx *ctx);
 bool winkd_lock_leave(KdCtx *ctx);
 bool winkd_lock_tryenter(KdCtx *ctx);
+bool winkd_download_module_and_pdb(WindModule *module, const char *symserver, const char *symstore, char **exepath, char **pdbpath);
 #endif
