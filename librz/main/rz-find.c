@@ -387,6 +387,7 @@ RZ_API int rz_main_rz_find(int argc, const char **argv) {
 			ro.mode = RZ_SEARCH_ESIL;
 			rz_list_append(ro.keywords, (void *)opt.arg);
 			break;
+		case 'I':
 		case 's':
 			ro.mode = RZ_SEARCH_KEYWORD;
 			ro.hexstr = false;
